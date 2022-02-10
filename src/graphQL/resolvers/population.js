@@ -32,8 +32,8 @@ module.exports = {
             return updatedDoc;
         },
         async delete (_,args) {
-            let deletedDoc = await populationSchema.findOneAndDelete({_id:args.id})
-            .then((err,doc)=>{
+            let deletedDoc = await populationSchema.findOneAndDelete({_id:args.id}).then(
+                (err,doc)=>{
                 if(err){
                     return err
                 }else{
