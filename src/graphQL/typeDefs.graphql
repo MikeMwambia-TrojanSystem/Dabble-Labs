@@ -1,0 +1,22 @@
+type Population {
+    id : ID!
+    country: String!
+    year: String!
+    area: Int!
+    population : Int!
+}
+
+type Query {
+
+    countrybyID(id: ID!): Population!
+    allCountries:[Population!]!
+}
+
+type Mutation {
+    #Create a population data for specific country
+    post(country:String!,year:String!,area:Int!,population:Int!): Population!
+    #Update Population Data
+    update(id:ID!,population:Int!,year:Int!) : Population
+    #Delete Country Data
+    delete(id:ID!):Population
+}
