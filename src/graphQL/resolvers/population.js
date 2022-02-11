@@ -1,7 +1,8 @@
 const { resetWatchers } = require('nodemon/lib/monitor/watch');
 const populationSchema = require('../../models/population');
-
+//CRUD applications
 module.exports = {
+    //Document modifications
     Mutation: {
         async post(_, args) {
             const newPopulationData = new populationSchema({
@@ -43,6 +44,7 @@ module.exports = {
             return deletedDoc;
         }
     },
+    //Document Queries
     Query: {
 
         countrybyID: async (_, args) => {

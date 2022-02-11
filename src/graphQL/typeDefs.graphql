@@ -1,3 +1,4 @@
+#Population object
 type Population {
     id : ID!
     country: String!
@@ -7,8 +8,10 @@ type Population {
 }
 
 type Query {
-
+    #Find by country ID
     countrybyID(id: ID!): Population!
+
+    #Find all countries
     allCountries:[Population!]!
 }
 
