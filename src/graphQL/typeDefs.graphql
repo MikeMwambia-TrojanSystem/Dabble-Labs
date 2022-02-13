@@ -8,6 +8,7 @@ type Population {
 }
 
 type Query {
+    
     #Find by country ID
     countrybyID(id: ID!): Population!
 
