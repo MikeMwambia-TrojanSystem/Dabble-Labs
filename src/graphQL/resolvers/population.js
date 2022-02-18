@@ -51,26 +51,20 @@ module.exports = {
     Query: {
 
         countrybyID: async (_, args) => {
-            let data = await populationSchema.findById({_id:args.id}).then((err,data)=>{
-                if(err){
-                    return err;
-                }else{
-                    return data;
-                }
-            })
-
-            return data;
+            try{
+                return await populationSchema.findById({_id:args.id})
+            }catch(err){
+                return err
+            }
         },
+        
         allCountries : async (_,args) =>{
-            let allCountries = await populationSchema.find().then((err,data)=>{
-                if(err){
-                    return err;
-                }else{
-                    return data
-                }
-            })
 
-            return allCountries;
+            try {
+                return await populationSchema.find()
+            }catch(err){
+                return err 
+            }
         }
       
     }
